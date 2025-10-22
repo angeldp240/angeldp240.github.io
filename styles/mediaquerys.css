@@ -1,0 +1,266 @@
+/* =========================================== */
+/* === ADAPTACIÓN A DISPOSITIVOS MÓVILES === */
+/* =========================================== */
+@media (max-width: 599px) {
+
+    /* Ajustes Generales */
+    main {
+        max-width: 100%; /* Permitimos que el contenido use todo el ancho */
+        padding: 0 10px; /* Pequeño padding lateral para evitar que toque los bordes */
+    }
+
+    /* --- 1. Encabezado y Navegación (Header) --- */
+
+    .main-header {
+        /* Centramos el contenido o lo apilamos si es necesario */
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 20px 0; /* Ajustamos el padding */
+        max-width: 100%;
+    }
+
+    /* Ocultamos la navegación para simplificar o para un menú hamburguesa */
+    .main-nav {
+        display: none; /* Puedes cambiar esto por un botón de menú si lo deseas */
+    }
+    
+    /* Adaptamos el logo para centrarlo y ponerlo arriba */
+    .logo {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .logo a {
+        display: flex; /* Para centrar el icono y el texto juntos */
+        flex-direction: column;
+        align-items: center;
+        text-decoration: none;
+        color: inherit;
+        font-weight: bold;
+    }
+
+    .logo .fa-icon {
+        margin-right: 0;
+        margin-bottom: 5px; /* Espacio entre icono y texto */
+    }
+    
+    /* --- 2. Sección Hero (Principal) --- */
+
+    .hero-section {
+        flex-direction: column; /* Apilamos el contenido: texto arriba, imagen abajo */
+        padding: 40px 10px 40px 10px;
+        text-align: center;
+    }
+
+    .hero-content {
+        order: 1; /* Texto arriba */
+        margin-bottom: 20px;
+    }
+    
+    /* Reducimos el tamaño de fuente para que no sea tan grande */
+    .hero-content h2 {
+        font-size: 2.5em; 
+        line-height: 1.1;
+    }
+
+    /* Aseguramos que la línea de subrayado se vea bien */
+    .hero-content h2 strong::after {
+        bottom: -8px; /* Ajustamos la posición de la línea */
+        height: 3px; /* Reducimos el grosor */
+    }
+
+    .hero-image {
+        order: 2; /* Imagen abajo */
+        margin-left: auto;
+        margin-right: auto;
+        padding: 0;
+    }
+    
+    .hero-image img {
+        max-width: 80%; /* Hacemos la imagen más grande para que destaque más */
+        margin-left: 0; /* Removemos el margin-left: auto del estilo de desktop */
+        margin: 0 auto; /* Centramos la imagen */
+    }
+
+    /* --- 3. Sección "Acerca de Nosotros" --- */
+
+    .about-section {
+        flex-direction: column; /* Apilamos el contenido: Texto arriba, Imagen(es) abajo */
+        gap: 20px;
+        padding: 40px 10px;
+    }
+
+    .about-text {
+        max-width: 100%; /* Permitimos que el texto use todo el ancho */
+        padding: 0 10px; /* Ajustamos el padding */
+        text-align: center;
+    }
+
+    .about-text h3 {
+        font-size: 2em;
+        margin-bottom: 15px;
+    }
+
+    .about-text p {
+        font-size: 1em;
+    }
+
+    .about-images {
+        flex: unset; /* Reiniciamos la propiedad flex para que no interfiera */
+        min-height: auto;
+        padding: 0 10px; /* Ajustamos el padding */
+        /* Flexbox ya no necesita centrar, sino alinear en bloque */
+        justify-content: center; 
+        align-items: flex-start;
+    }
+    
+    .about-images img {
+        max-width: 85%; /* Hacemos la imagen más compacta para celular */
+        height: auto;
+        margin: 0 auto; /* Centramos la imagen */
+    }
+
+    /* Si tuvieras dos imágenes (como se ve en la captura de Desktop): */
+    /*
+    .about-images .image-1, .about-images .image-2 {
+        position: static; 
+        max-width: 90%; 
+        margin: 10px auto; 
+        box-shadow: none; 
+        transform: none; 
+    }
+    */
+
+
+    /* --- 4. Sección "Menú" --- */
+
+    .menu-section {
+        padding: 40px 10px;
+    }
+
+    .menu-section h2 {
+        margin-bottom: 30px;
+        font-size: 1.8em;
+    }
+
+    .menu-grid {
+        /* Cambiamos de 3 columnas a 2 columnas para móvil */
+        grid-template-columns: repeat(2, 1fr); 
+        gap: 20px 10px; /* Reducimos el espacio */
+        max-width: 100%; 
+    }
+
+    .menu-item img {
+        max-width: 90px; /* Reducimos el tamaño de las imágenes del menú para móvil */
+        margin-bottom: 5px;
+    }
+
+    .menu-item h4 {
+        font-size: 1em;
+        margin: 5px 0 3px 0;
+    }
+
+    .menu-item p {
+        font-size: 0.9em;
+    }
+
+    /* Ajustamos los tamaños específicos para que se mantengan proporcionales */
+    .menu-item img.cappuccino {
+        max-width: 110px; /* Más grande que el resto, pero adaptado a móvil */
+    }
+    
+    .menu-item img.macchiato-img {
+        max-width: 80px; /* Más chico que el resto, pero adaptado a móvil */
+    }
+
+}
+
+/* =========================================== */
+/* === ADAPTACIÓN A TABLETAS (600px - 1023px) === */
+/* =========================================== */
+@media (min-width: 600px) and (max-width: 1023px) {
+
+    /* Ajustes Generales */
+    main {
+        max-width: 900px; /* Reducimos el ancho máximo para tabletas */
+        padding: 0 20px; /* Añadimos padding lateral */
+    }
+
+    /* --- 1. Encabezado y Navegación (Header) --- */
+
+    .main-header {
+        max-width: 900px;
+        padding: 20px 0; /* Ajustamos padding para alinearse con 'main' */
+    }
+
+    .main-nav li {
+        margin-left: 15px; /* Reducimos el espacio entre enlaces */
+    }
+
+    /* --- 2. Sección Hero (Principal) --- */
+
+    .hero-section {
+        padding: 60px 0;
+    }
+
+    /* Ajustamos el tamaño del título, ligeramente más pequeño que en desktop */
+    .hero-content h2 {
+        font-size: 3.2em; 
+    }
+
+    /* Mantenemos la imagen reducida, pero quizá la hacemos ligeramente más grande */
+    .hero-image img {
+        max-width: 85%;
+    }
+
+    /* --- 3. Sección "Acerca de Nosotros" --- */
+
+    .about-section {
+        padding: 60px 0;
+        gap: 30px;
+    }
+
+    /* Hacemos el texto más compacto para dar espacio a la imagen */
+    .about-text {
+        max-width: 45%; 
+        padding-left: 0;
+    }
+
+    .about-images {
+        flex: 1; /* Mantenemos el reparto equitativo */
+        min-height: 350px;
+        padding-right: 0;
+    }
+    
+    .about-images img {
+        max-width: 95%; /* Aseguramos que la única imagen utilice bien el espacio */
+    }
+
+    /* --- 4. Sección "Menú" --- */
+
+    .menu-section {
+        padding: 40px 0;
+    }
+
+    .menu-grid {
+        /* Mantenemos 3 columnas, pero usamos todo el ancho disponible */
+        grid-template-columns: repeat(3, 1fr); 
+        gap: 20px;
+        max-width: 100%;
+    }
+
+    .menu-item img {
+        max-width: 150px; /* Reducimos el tamaño por defecto de las imágenes del menú */
+    }
+
+    /* Ajustes específicos para que mantengan su diferencia de tamaño */
+    .menu-item img.cappuccino {
+        max-width: 180px;
+    }
+    
+    .menu-item img.macchiato-img {
+        max-width: 120px;
+    }
+}

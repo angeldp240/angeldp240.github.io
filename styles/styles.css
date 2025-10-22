@@ -1,0 +1,223 @@
+    /*
+    Los colores clave basados en la imagen son:
+    - Fondo general: #B8906A (un marrón claro/tostado)
+    - Texto principal (oscuro): #333
+    - Línea de subrayado: #007bff (un azul, aunque en la imagen parece un azul más oscuro)
+    */
+
+    body {
+        font-family: Arial, sans-serif; /* Reemplazar con la fuente deseada */
+        margin: 0;
+        padding: 0;
+        background-color: #B8906A; /* Color de fondo principal */
+        color: #333; /* Color de texto general */
+    }
+
+    /* --- Centrado del Contenido Principal --- */
+    main {
+        max-width: 1200px; /* Define el ancho máximo del contenido */
+        margin: 0 auto; /* Centra el contenido horizontalmente */
+    }
+
+    .fa-icon{
+        height: 30px;
+        width: 30px;;
+    }
+
+    /* --- Encabezado y Navegación --- */
+
+    .main-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px; /* Reducimos el padding lateral para que se ajuste mejor */
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .logo {
+        display: flex;
+        align-items: center;
+    }
+
+    .logo img {
+        width: 30px; /* Ajusta el tamaño del icono */
+        margin-right: 10px;
+    }
+
+    .logo h1 {
+        font-size: 1.5em;
+        margin: 0;
+    }
+
+    .main-nav ul {
+        list-style: none;
+        display: flex;
+        padding: 0;
+        margin: 0;
+    }
+
+    .main-nav li {
+        margin-left: 25px;
+    }
+
+    .main-nav a {
+        text-decoration: none;
+        color: #333; /* Color de los enlaces */
+        font-weight: bold;
+        transition: color 0.3s;
+    }
+
+    .main-nav a:hover {
+        color: #fff; /* Efecto al pasar el ratón */
+    }
+
+    /* --- Sección Hero (Principal) --- */
+
+    .hero-section {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 50px 0 100px 0;
+    }
+
+    .hero-content h2 {
+        font-size: 4em;
+        font-style: italic; /* Para el estilo cursivo */
+        line-height: 1.2;
+        color: #333;
+    }
+
+    .hero-content h2 {
+        display: inline-block;
+    }
+
+    .hero-content h2 strong {
+        font-style: italic;
+        font-weight: 900;
+        position: relative;
+        color: inherit;
+    }
+
+    .hero-content h2 strong::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background-color: #007bff;
+        bottom: -15px;
+    }
+
+    /* ☕ CAMBIO: La primera imagen (taza de café) es más pequeña ☕ */
+    .hero-image img {
+        max-width: 70%; /* Se reduce el ancho */
+        height: auto;
+        display: block;
+        margin-left: auto;
+    }
+
+    /* --- Sección "Acerca de Nosotros" --- */
+
+    .about-section {
+        display: flex;
+        gap: 40px;
+        padding: 50px 0;
+    }
+
+    .about-text {
+        flex: 1;
+        max-width: 40%;
+        padding-left: 50px;
+    }
+
+    .about-text h3 {
+        font-size: 2.5em;
+        font-style: italic;
+        color: #333;
+    }
+
+    .about-text p {
+        font-size: 1.2em;
+        line-height: 1.6;
+    }
+
+    .about-images {
+        flex: 1;
+        position: relative;
+        min-height: 400px;
+        padding-right: 50px;
+        display: flex; /* Añadido para facilitar el centrado */
+        justify-content: center; /* Añadido para centrar horizontalmente */
+        align-items: center; /* Añadido para centrar verticalmente */
+    }
+
+    /* 🖼️ CAMBIO: Estilos para una sola imagen en "Acerca de Nosotros" 🖼️ */
+    .about-images img {
+        max-width: 100%; /* La imagen puede ocupar todo el ancho disponible de su contenedor flexible */
+        height: auto;
+        box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    /* --- Sección "Menú" --- */
+
+    .menu-section {
+        padding: 0px 50px;
+        text-align: center; /* Centra el título "Menú" */
+    }
+
+    .menu-section h2 {
+        font-size: 2em;
+        margin-bottom: 50px;
+        font-weight: bold;
+        color: #333;
+    }
+
+    .menu-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr); 
+        gap: 40px;
+        max-width: 1000px; 
+        margin: 0 auto;
+    }
+
+    .menu-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .menu-item img {
+        width: 100%; 
+        max-width: 200px; /* Tamaño por defecto para las imágenes del menú */
+        height: auto;
+        margin-bottom: 10px;
+    }
+
+    /* --- AJUSTES ESPECÍFICOS PARA IMÁGENES DEL MENÚ --- */
+
+    /* Hace la imagen de Cappuccino más grande */
+    .menu-item img.cappuccino {
+        max-width: 300px; /* Aumenta este valor para hacerla más grande */
+    }
+
+    /* Hace la imagen de Macchiato más chica */
+    .menu-item img.macchiato-img { /* Usamos la nueva clase */
+        max-width: 150px; /* Reduce este valor para hacerla más pequeña */
+    }
+
+
+    .menu-item h4 {
+        font-size: 1.2em;
+        font-weight: bold;
+        margin: 10px 0 5px 0;
+        color: #333;
+    }
+
+    .menu-item p {
+        font-size: 1.1em;
+        font-weight: 500;
+        margin: 0;
+        color: #333; /* Color del precio */
+    }
